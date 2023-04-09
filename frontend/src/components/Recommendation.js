@@ -3,14 +3,12 @@ import Video from './Video'
 import '../styles/Recommendation.css'
 
 function Recommendation() {
+  const dummyData=require("../DummyData/VideoData.json")
   return (
     <div className='recommendation'>
       <h2>Recommended</h2>
       <div className='recommendation__videos'>
-        <Video title={"hello"}/>
-        <Video title={"hi"}/>
-        <Video title={"bye"}/>
-        <Video title={"tata"}/>
+        {dummyData.map(x=><Video title={x.title} videoImage={x.videoImage} views={x.views} timestamp={x.timestamp} channelImage={x.channelImage} channelName={x.channelName}/>)}
       </div>
     </div>
   )
